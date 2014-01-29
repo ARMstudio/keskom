@@ -1,4 +1,5 @@
 <?
+session_start();
 $approve = array();
     for($i=1;$i<=5;$i++){
 	if(isset($_POST['group'.$i]))
@@ -21,5 +22,13 @@ $approve = array();
 	else
 	$poin-=1;
 	}
-	print $poin;
+	
+	require_once('function.inc.php'); 
+	if (check_login_status() == false) { 
+              echo "guest"; 
+	} 
+	else{
+	echo $_SESSION['username'] .", poin anda adalah: ". $poin ;
+	}	
+	
 ?>
