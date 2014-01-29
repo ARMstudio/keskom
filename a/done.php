@@ -25,7 +25,7 @@ $approve = array();
 	
 	require_once('function.inc.php'); 
 	if (check_login_status() == false) { 
-              echo "guest"; 
+              echo "guest" .", poin anda adalah: ". $poin ;; 
 	} 
 	else{
 	echo $_SESSION['username'] .", poin anda adalah: ". $poin ;
